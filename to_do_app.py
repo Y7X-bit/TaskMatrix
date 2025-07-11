@@ -25,7 +25,7 @@ class Task:
 class TodoApp(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("To-Do List Pro Max")
+        self.title("To-Do List")
         self.geometry("660x460")
         self.resizable(False, False)
         self.filename = "tasks.json"
@@ -37,40 +37,40 @@ class TodoApp(ctk.CTk):
     def build_ui(self):
         self.configure(bg="#000000")
 
-        self.task_entry = ctk.CTkEntry(self, width=420, placeholder_text="📝 Task description", fg_color="#101010", border_color="red", border_width=2)
+        self.task_entry = ctk.CTkEntry(self, width=420, placeholder_text="📝 Task description", fg_color="#000000", border_color="red", border_width=2)
         self.task_entry.place(x=20, y=20)
 
         self.priority_var = ctk.StringVar(value="Medium")
-        self.priority_menu = ctk.CTkOptionMenu(self, values=["Low", "Medium", "High"], variable=self.priority_var, width=100, fg_color="#101010", button_color="#222")
+        self.priority_menu = ctk.CTkOptionMenu(self, values=["Low", "Medium", "High"], variable=self.priority_var, width=100, fg_color="#000000", button_color="#000000")
         self.priority_menu.place(x=460, y=20)
 
-        self.due_entry = ctk.CTkEntry(self, width=200, placeholder_text="📅 Due Date (YYYY-MM-DD)", fg_color="#101010", border_color="red", border_width=2)
+        self.due_entry = ctk.CTkEntry(self, width=200, placeholder_text="📅 Due Date (YYYY-MM-DD)", fg_color="#000000", border_color="red", border_width=2)
         self.due_entry.place(x=20, y=60)
 
-        self.tags_entry = ctk.CTkEntry(self, width=340, placeholder_text="🏷️ Tags (comma-separated)", fg_color="#101010", border_color="red", border_width=2)
+        self.tags_entry = ctk.CTkEntry(self, width=340, placeholder_text="🏷️ Tags (comma-separated)", fg_color="#000000", border_color="red", border_width=2)
         self.tags_entry.place(x=240, y=60)
 
         self.add_btn = ctk.CTkButton(self, text="➕ Add Task", width=100, fg_color="red", hover_color="#ff4d4d", text_color="white", corner_radius=20)
         self.add_btn.place(x=560, y=20)
         self.add_btn.configure(command=self.add_task)
 
-        self.task_listbox = ctk.CTkTextbox(self, width=620, height=260, fg_color="#0a0a0a", text_color="#ffdddd", border_color="red", border_width=2)
+        self.task_listbox = ctk.CTkTextbox(self, width=620, height=260, fg_color="#000000", text_color="#ffdddd", border_color="red", border_width=2)
         self.task_listbox.place(x=20, y=110)
         self.task_listbox.configure(state="disabled")
 
-        self.complete_btn = ctk.CTkButton(self, text="✅ Complete", width=120, fg_color="#202020", hover_color="red", border_color="red", border_width=2, text_color="white")
+        self.complete_btn = ctk.CTkButton(self, text="✅ Complete", width=120, fg_color="#000000", hover_color="red", border_color="red", border_width=2, text_color="white")
         self.complete_btn.place(x=20, y=390)
         self.complete_btn.configure(command=self.mark_completed)
 
-        self.delete_btn = ctk.CTkButton(self, text="🗑️ Delete", width=120, fg_color="#202020", hover_color="red", border_color="red", border_width=2, text_color="white")
+        self.delete_btn = ctk.CTkButton(self, text="🗑️ Delete", width=120, fg_color="#000000", hover_color="red", border_color="red", border_width=2, text_color="white")
         self.delete_btn.place(x=160, y=390)
         self.delete_btn.configure(command=self.delete_task)
 
-        self.export_btn = ctk.CTkButton(self, text="📤 Export CSV", width=120, fg_color="#202020", hover_color="red", border_color="red", border_width=2, text_color="white")
+        self.export_btn = ctk.CTkButton(self, text="📤 Export CSV", width=120, fg_color="#000000", hover_color="red", border_color="red", border_width=2, text_color="white")
         self.export_btn.place(x=300, y=390)
         self.export_btn.configure(command=self.export_to_csv)
 
-        self.undo_btn = ctk.CTkButton(self, text="↩️ Undo", width=100, fg_color="#202020", hover_color="red", border_color="red", border_width=2, text_color="white")
+        self.undo_btn = ctk.CTkButton(self, text="↩️ Undo", width=100, fg_color="#000000", hover_color="red", border_color="red", border_width=2, text_color="white")
         self.undo_btn.place(x=440, y=390)
         self.undo_btn.configure(command=self.undo)
 
@@ -78,6 +78,7 @@ class TodoApp(ctk.CTk):
         self.brand_label.place(x=500, y=430)
 
         self.update_task_display()
+
 
     def load_tasks(self):
         try:
