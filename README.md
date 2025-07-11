@@ -1,17 +1,27 @@
-# ✅ To-Do List Pro Max
+<div align="center">
 
-A glowing, AMOLED-themed to-do list app built with CustomTkinter.  
-Includes tagging, priorities, due dates, CSV export, and undo.  
-Designed with ❤️ and powered by **🔎 Y7X 💗**
+# 🖤 Taskmatrix  
+### 🔴 A Fully AMOLED To-Do List App — Minimal. Glowing. Functional.
 
-## Features
-- Add/edit/delete tasks
-- Completion tracking
-- AMOLED + red neon UI
-- Export to CSV
-- Undo last action
+<img src="assets/1.png" width="700"/>
 
-## Setup
+</div>
+
+---
+
+### 🔧 Features
+
+- ✅ Add, delete, and complete tasks with a single click  
+- 🏷️ Add tags, due dates & priority levels  
+- 🌑 Full AMOLED theme with glowing red outlines  
+- 📤 Export tasks to CSV  
+- 🔁 Undo last action  
+- 🔎 Powered by **Y7X 💗**
+
+---
+
+### ⚙️ Setup
+
 ```bash
 pip install customtkinter
 python to_do_app.py
