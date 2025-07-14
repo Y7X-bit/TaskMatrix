@@ -7,7 +7,7 @@ TaskMatrix** is a minimalist, glowing to-do list app designed for modern product
 It blends clean task management features with a sleek AMOLED interface powered by red outlines and white-on-black contrast.
 Branded with 💗 by [Y7X-bit](https://github.com/Y7X-bit)
 
-<img src="assets/1.png" width="700"/>
+<img src="assets/a.png" width="700"/>
 
 </div>
 
