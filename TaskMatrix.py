@@ -22,12 +22,13 @@ class Task:
         if self.tags is None:
             self.tags = []
 
-class TodoApp(ctk.CTk):
+class TaskMatrix(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("To-Do List")
+        self.title("TaskMatrix")
         self.geometry("660x460")
         self.resizable(False, False)
+        self.configure(fg_color="#000000")
         self.filename = "tasks.json"
         self.tasks: List[Task] = []
         self.last_action = None
@@ -35,26 +36,24 @@ class TodoApp(ctk.CTk):
         self.build_ui()
 
     def build_ui(self):
-        self.configure(bg="#000000")
-
-        self.task_entry = ctk.CTkEntry(self, width=420, placeholder_text="📝 Task description", fg_color="#000000", border_color="red", border_width=2)
+        self.task_entry = ctk.CTkEntry(self, width=420, placeholder_text="📝 Task description", fg_color="#000000", border_color="red", border_width=2, text_color="white")
         self.task_entry.place(x=20, y=20)
 
         self.priority_var = ctk.StringVar(value="Medium")
-        self.priority_menu = ctk.CTkOptionMenu(self, values=["Low", "Medium", "High"], variable=self.priority_var, width=100, fg_color="#000000", button_color="#000000")
+        self.priority_menu = ctk.CTkOptionMenu(self, values=["Low", "Medium", "High"], variable=self.priority_var, width=100, fg_color="#000000", button_color="#000000", text_color="white")
         self.priority_menu.place(x=460, y=20)
 
-        self.due_entry = ctk.CTkEntry(self, width=200, placeholder_text="📅 Due Date (YYYY-MM-DD)", fg_color="#000000", border_color="red", border_width=2)
+        self.due_entry = ctk.CTkEntry(self, width=200, placeholder_text="📅 Due Date (YYYY-MM-DD)", fg_color="#000000", border_color="red", border_width=2, text_color="white")
         self.due_entry.place(x=20, y=60)
 
-        self.tags_entry = ctk.CTkEntry(self, width=340, placeholder_text="🏷️ Tags (comma-separated)", fg_color="#000000", border_color="red", border_width=2)
+        self.tags_entry = ctk.CTkEntry(self, width=340, placeholder_text="🏷️ Tags (comma-separated)", fg_color="#000000", border_color="red", border_width=2, text_color="white")
         self.tags_entry.place(x=240, y=60)
 
         self.add_btn = ctk.CTkButton(self, text="➕ Add Task", width=100, fg_color="red", hover_color="#ff4d4d", text_color="white", corner_radius=20)
         self.add_btn.place(x=560, y=20)
         self.add_btn.configure(command=self.add_task)
 
-        self.task_listbox = ctk.CTkTextbox(self, width=620, height=260, fg_color="#000000", text_color="#ffdddd", border_color="red", border_width=2)
+        self.task_listbox = ctk.CTkTextbox(self, width=620, height=260, fg_color="#000000", text_color="white", border_color="red", border_width=2)
         self.task_listbox.place(x=20, y=110)
         self.task_listbox.configure(state="disabled")
 
@@ -74,11 +73,10 @@ class TodoApp(ctk.CTk):
         self.undo_btn.place(x=440, y=390)
         self.undo_btn.configure(command=self.undo)
 
-        self.brand_label = ctk.CTkLabel(self, text="🔎 Powered by Y7X 💗", text_color="#ff4d4d")
+        self.brand_label = ctk.CTkLabel(self, text="🔎 Powered by Y7X 💗", text_color="white")
         self.brand_label.place(x=500, y=430)
 
         self.update_task_display()
-
 
     def load_tasks(self):
         try:
@@ -183,5 +181,5 @@ class TodoApp(ctk.CTk):
             messagebox.showerror("Export Error", str(e))
 
 if __name__ == "__main__":
-    app = TodoApp()
+    app = TaskMatrix()
     app.mainloop()

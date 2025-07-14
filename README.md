@@ -1,7 +1,11 @@
 <div align="center">
 
-# 🖤 Taskmatrix  
-### 🔴 A Fully AMOLED To-Do List App — Minimal. Glowing. Functional.
+# 🖤 TaskMatrix  
+**Minimal chaos. Maximum control**
+
+TaskMatrix** is a minimalist, glowing to-do list app designed for modern productivity.  
+It blends clean task management features with a sleek AMOLED interface powered by red outlines and white-on-black contrast.
+Branded with 💗 by [Y7X-bit](https://github.com/Y7X-bit)
 
 <img src="assets/1.png" width="700"/>
 
@@ -9,19 +13,24 @@
 
 ---
 
-### 🔧 Features
+## 🌟 Features at a Glance
 
-- ✅ Add, delete, and complete tasks with a single click  
-- 🏷️ Add tags, due dates & priority levels  
-- 🌑 Full AMOLED theme with glowing red outlines  
-- 📤 Export tasks to CSV  
-- 🔁 Undo last action  
-- 🔎 Powered by **Y7X 💗**
+- ✅ Task creation, deletion & completion
+- 🧠 Priority levels + tags + due dates
+- 🔁 Undo last action
+- 📤 Export to CSV
+- 🖤 AMOLED UI with red outlines & white text
+- 💾 Persistent save via JSON
+- 🔎 Branded: **Powered by Y7X 💗**
 
 ---
 
-### ⚙️ Setup
+## 🖥️ Installation
+
+> Python 3.9 or later required
 
 ```bash
-pip install customtkinter
-python to_do_app.py
+git clone https://github.com/Y7X-bit/TaskMatrix.git
+cd TaskMatrix
+pip install -r requirements.txt
+python TaskMatrix.py
